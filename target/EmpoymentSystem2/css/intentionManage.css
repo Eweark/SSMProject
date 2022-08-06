@@ -1,0 +1,106 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#content{
+	text-align: center;
+}
+
+#d1 {
+	position: absolute;
+	left: 35%;
+	top: 18%;
+	width: 550px;
+	height: 450px;
+	background-color: rgba(227, 238, 248, 0.8);
+	border-radius: 15px;
+	/* 圆角 */
+}
+
+#title {
+	position: absolute;
+	top: 5%;
+	left: 35%;
+
+}
+
+#prompt1 {
+	position: absolute;
+	top: 18%;
+	left: 23%;
+	display: none;
+}
+
+#inputAcc {
+	position: absolute;
+	top: 23%;
+	left: 30%;
+}
+#acc:hover #prompt1 {
+	display: block;
+}
+
+
+#prompt2 {
+	position: absolute;
+	top: 30%;
+	left: 33%;
+	display: none;
+}
+
+#pwd {
+	position: absolute;
+	top: 35%;
+	left: 30%;
+}
+
+#checkPwd {
+	position: absolute;
+	top: 45%;
+	left: 30%;
+}
+
+#usertype {
+	position: absolute;
+	top: 55%;
+	left: 30%;
+}
+
+#sex {
+	position: absolute;
+	top: 65%;
+	left: 30%;
+}
+
+#code {
+	position: absolute;
+	top: 75%;
+	left: 30%;
+}
+
+#codeimg {
+	position: absolute;
+	top: 74%;
+	left: 55%;
+}
+
+#regBtn {
+	position: absolute;
+	top: 87%;
+	left: 23%;
+}
+
+input {
+	border-radius: 5px;
+	border: 2px solid gainsboro;
+	outline: none;
+}
+
+input:hover {
+	border: 2px solid gray;
+}
+
+input:focus {
+	border: 2px solid deepskyblue
+}

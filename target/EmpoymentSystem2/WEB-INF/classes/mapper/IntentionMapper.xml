@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cykj.mapper.IntentionMapper">
+    <insert id="addIntention" parameterType="com.cykj.bean.Tblintention">
+        insert into tblintention(regionId,stuId,company,minSal,maxSal) values (#{regionId},#{stuId},#{company},#{minSal},#{maxSal})
+    </insert>
+    <select id="queryAll" resultType="com.cykj.bean.Tblintention">
+        select i.*,u.trueName as name from tblintention i left join user u on i.stuId = u.id
+    </select>
+    <select id="queryByCondition" parameterType="com.cykj.query.RegionQuery" resultType="com.cykj.bean.Tblintention">
+        select i.*,u.trueName as name from tblintention i left join user u on i.stuId = u.id
+        <where>
+            <if test="name != null and name != ''">
+                u.trueName = #{name}
+            </if>
+            <if test="regionList != null and regionList.size() >0">
+                and regionId in
+                <foreach collection="regionList" item="region" open="(" close=")" separator=",">
+                    #{region}
+                </foreach>
+
+            </if>
+            <if test="minSal != 0">
+                and minSal = #{minSal}
+            </if>
+            <if test="maxSal != 0" >
+                and maxSal = #{maxSal}
+            </if>
+        </where>
+    </select>
+
+    <select id="queryByCondition1" parameterType="com.cykj.query.RegionQuery" resultMap="regionMap">
+        select i.*,u.trueName as name from tblintention i left join user u on i.stuId = u.id
+        <where>
+            <if test="name != null and name != ''">
+                u.trueName = #{name}
+            </if>
+            <if test="region != null and region != ''">
+                and regionId in (#{region})
+            </if>
+            <if test="minSal != 0">
+                and minSal = #{minSal}
+            </if>
+            <if test="maxSal != 0" >
+                and maxSal = #{maxSal}
+            </if>
+        </where>
+    </select>
+    <resultMap id="regionMap" type="com.cykj.bean.Tblintention">
+        <id property="id" column="id"/>
+        <result property="regionId" column="regionId"/>
+    </resultMap>
+</mapper>

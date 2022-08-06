@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cykj.mapper.RoleMapper">
+    <select id="queryPowerByRoleId" parameterType="java.lang.Integer" resultType="com.cykj.bean.Tblpower">
+       SELECT * FROM tblpower WHERE powerId in(SELECT powerId FROM tblrolepower WHERE roleId= #{roleId})
+    </select>
+    <select id="queryRole" resultType="com.cykj.bean.Tblrole">
+        select * from tblrole
+    </select>
+</mapper>

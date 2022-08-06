@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cykj.mapper.RolePowerMapper">
+<!--    查询所有权限-->
+    <select id="selectAllRolePower" parameterType="java.lang.Integer" resultType="com.cykj.bean.Tblpower">
+        SELECT * FROM tblpower WHERE powerId in(SELECT powerId FROM tblrolepower WHERE roleId=#{roleId})
+    </select>
+<!--    添加权限-->
+    <insert id="insertRolePower" parameterType="com.cykj.bean.Tblrolepower">
+        insert into tblrolepower(roleId,powerId)VALUES(#{roleId},#{powerId})
+    </insert>
+<!--    通过角色id查询权限-->
+    <select id="queryPowerById" parameterType="java.lang.Integer" resultType="com.cykj.bean.Tblrolepower">
+        SELECT * FROM tblrolepower WHERE roleId = #{roleId}
+    </select>
+<!--    查询所有权限-->
+    <select id="queryAllPower" resultType="com.cykj.bean.Tblpower">
+        select * from tblpower
+    </select>
+<!--    通过角色id和权限id查询rpid-->
+    <select id="queryPowerId" parameterType="com.cykj.bean.Tblrolepower" resultType="com.cykj.bean.Tblrolepower">
+        select rpId from tblrolepower where powerId=#{powerId} and roleId=#{roleId}
+    </select>
+<!--    删除权限-->
+    <delete id="delPower" parameterType="java.lang.Integer">
+        delete from tblrolepower where  rpId = #{rpId}
+    </delete>
+</mapper>

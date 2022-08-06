@@ -1,0 +1,139 @@
+* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#header {
+				height: 10vh;
+				background-color: #3e73d2;
+			
+			}
+
+			#userInfo{
+				margin-left: 1336px;
+				padding-top: 30px;
+				position: absolute;
+				margin-bottom: 20px;
+			}
+			#con{
+				display: none;
+			}
+			#userInfo:hover #con {
+				display: block;
+			}
+			#con>p{
+				padding-top: 10px;
+				margin-left: -30px;
+				border: 1px solid black;
+				background-color: white;
+				width: 100px;
+				text-align: center;
+			}
+			#con>p:hover{
+				background-color: #3e73d2;
+			}
+			#left {
+				width: 15vw;
+				height: 90vh;
+				background-color: #3e73d2;
+				float: left;
+			}
+			
+			#right {
+				width: 83.9vw;
+				height: 90vh;
+				/*background-image: url(../img/蜘蛛侠+黑色背景+简约4k壁纸3840x2160_彼岸图网.jpg);*/
+				background-size: cover;
+				float: right;
+			}
+			
+			#left>div {
+				height: 50px;
+				border: 2px solid aliceblue;
+				/* background-color: #3e73d2; */
+				text-align: center;
+				line-height: 50px;
+
+			}
+
+			ul {
+				color: white;
+				font-weight: bolder;
+				/*border: 1px solid white;*/
+				background-color: #0000ff;
+				text-align: center;
+			}
+			
+			.mainMenu ul {
+				display: none;
+			
+			}
+			.mainMenu>li{
+				border: 1px solid white;
+			}
+			/* 鼠标移动到主菜单时显示子菜单 */
+			.mainMenu:hover ul{
+				display: block;
+			}
+			.mainMenu>li:hover{
+				background-color: coral;
+			}
+			.mainMenu>li>ul>li:hover{
+				background-color: coral;
+			}
+			.update{
+				float: right;
+				margin-top: 30px;
+				margin-right: 20px;
+				height: 30px;
+				width: 100px;
+				text-align: center;
+				background-color: #3e73d2;
+				border: 0px;
+				cursor: pointer;
+				text-decoration: underline;
+			}
+			.logo{
+				float: left;
+				margin-top: 18px;
+			}
+			.user{
+				position: absolute;
+				margin-left: 1200px;
+				margin-top: 18px;
+			}
+			#header>h1{
+				margin-left: 60px;
+				line-height: 10vh;
+				/* margin-top: 40px; */
+			}
+			#header>p{
+				float: right;
+				margin-right: 31px;
+				margin-top: 32px;
+			}
+			a{
+				color: #F0F8FF;
+			}
+			#updatePwd{
+				width: 300px;
+				height: 300px;
+				background-color: white;
+				position: absolute;
+				left: 40%;
+				margin-left: -150;
+				top: 30%;
+				margin-top: -150;
+				display: none;
+				text-align: center;
+				line-height: 70px;
+			}
+			#upd{
+				width: 100vw;
+				height: 100vh;
+				position: absolute;
+				left: 0;
+				top: 0;
+				background-color: #ff7f5003;
+				display: none;
+			}
